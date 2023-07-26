@@ -1,0 +1,17 @@
+<div class="notes-container">
+    <h1>List of Notes</h1>
+  
+    <h2>Select a topic from the list where to add note:</h2>
+    <ul class="notes-list">
+      <li *ngFor="let note of notes" class="note-item">
+        {{ note }}
+      </li>
+    </ul>
+  
+    <div class="button-container">
+      <button class="add-note-button">Add Note</button>
+      <p class="delete-notes-description">If you select "Delete," the notes will be permanently deleted.</p>
+      <button class="delete-notes-button">Delete Notes</button>
+    </div>
+  </div>
+  

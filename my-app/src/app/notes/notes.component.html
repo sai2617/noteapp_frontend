@@ -1,0 +1,15 @@
+<div class="notes-container">
+    <h1>Notes</h1>
+  
+    <!-- Display existing notes -->
+    <ul>
+      <li *ngFor="let note of notes">{{ note }}</li>
+    </ul>
+  
+    <!-- Form to add new notes -->
+    <form (submit)="addNote()">
+      <textarea [(ngModel)]="newNote" placeholder="Add a note..." rows="4"></textarea>
+      <button type="submit" (click)="addNotes()">Add Notes</button>
+    </form>
+  </div>
+  
