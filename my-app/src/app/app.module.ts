@@ -10,16 +10,15 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NotesComponent } from './notes/notes.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
 import { HttpClientModule } from '@angular/common/http'
-
 import { SharedDataService } from './shared-data.service';
-
-
+import { SharedNotesComponent } from './shared-notes/shared-notes.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'notes-list', component: NotesListComponent },
-  { path: 'notes', component: NotesComponent}
+  { path: 'notes', component: NotesComponent},
+  { path: 'shared-notes', component: SharedNotesComponent}
 ];
 
 @NgModule({
@@ -28,7 +27,8 @@ const routes: Routes = [
     LoginComponent,
     RegistrationComponent,
     NotesComponent,
-    NotesListComponent
+    NotesListComponent,
+    SharedNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +37,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-
+  providers: [SharedDataService],
   // bootstrap: [AppComponent],
   bootstrap: [AppComponent]
 })

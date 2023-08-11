@@ -3,5 +3,7 @@ export interface Note {
     title: string;
     content: string;
     createdAt: Date;
+    showContent?: boolean;
+    user: string;
   }
   

@@ -7,27 +7,27 @@ import { Note } from './note.model';
   providedIn: 'root'
 })
 export class NoteService {
-  private apiUrl = 'http://localhost:8080/api/notes';
+  private apiUrl = 'http://localhost:8082/api/notes';
 
   constructor(private http: HttpClient) { }
 
   getAllNotes(): Observable<Note[]> {
-    return this.http.get<Note[]>(`${this.apiUrl}/all`);
+    return this.http.get<Note[]>(this.apiUrl);
   }
 
   getNoteById(id: number): Observable<Note> {
-    return this.http.get<Note>(`${this.apiUrl}/view/${id}`);
+    return this.http.get<Note>(`${this.apiUrl}/${id}`);
   }
 
   createNote(note: Note): Observable<Note> {
-    return this.http.post<Note>(`${this.apiUrl}/nsave`, note);
+    return this.http.post<Note>(this.apiUrl, note);
   }
 
   updateNote(id: number, note: Note): Observable<Note> {
-    return this.http.put<Note>(`${this.apiUrl}/update/${id}`, note);
+    return this.http.put<Note>(`${this.apiUrl}/${id}`, note);
   }
 
   deleteNoteById(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
