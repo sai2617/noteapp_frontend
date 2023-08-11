@@ -11,6 +11,9 @@ import { NotesComponent } from './notes/notes.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
 import { HttpClientModule } from '@angular/common/http'
 
+import { SharedDataService } from './shared-data.service';
+
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,7 +37,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+
   // bootstrap: [AppComponent],
   bootstrap: [AppComponent]
 })
